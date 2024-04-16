@@ -25,6 +25,7 @@ const NavBar = () => {
     setToken(undefined);
     dispatch(clearCart());
     setIsUser(!isUser);
+    nav("/");
   }
   return (
     <>
@@ -41,7 +42,7 @@ const NavBar = () => {
           {/* navlinks */}
           <NavLinks />
           {/* cart */}
-          {token && (
+          {token && token !== undefined && (
             <>
               {/* cart */}
               <div
