@@ -8,8 +8,8 @@ export default {
         tallScreen: { raw: "(max-apect-ratio:3/2)" },
       },
       textColor: {
-        "yellow-better": "rgb(204 134 1)"
-      }
+        "yellow-better": "rgb(204 134 1)",
+      },
     },
   },
   plugins: ["prettier-plugin-tailwindcss"],

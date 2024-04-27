@@ -11,7 +11,10 @@ const NavLinks = () => {
           Home
         </Link>
       </li>
-      <li aria-label="Products-Page" className="hover:text-amber-300 duration-200">
+      <li
+        aria-label="Products-Page"
+        className="hover:text-amber-300 duration-200"
+      >
         <Link to={"/products/all"}>Products</Link>
       </li>
     </ul>

@@ -24,7 +24,7 @@ const ProductDetails = () => {
         const data = await resp.json();
         setProduct(data);
       } catch (error) {
-        throw new Error(error)
+        throw new Error(error);
       }
     })();
   }, [id]);
