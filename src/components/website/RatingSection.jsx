@@ -20,7 +20,7 @@ const RatingSection = () => {
                 key={i}
                 className={
                   i <= hover
-                    ? "text-yellow-300"
+                    ? "text-amber-300"
                     : "text-white stroke-1 stroke-black"
                 }
                 onMouseEnter={() => setHover(i)}

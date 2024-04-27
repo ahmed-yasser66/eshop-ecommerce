@@ -36,7 +36,7 @@ const Products = () => {
         </h1>
         <Link
           to={"/products/all"}
-          className="uppercase text-2xl text-center md:text-left my-12 font-medium tracking-wider text-yellow-400 hidden md:block hover:cursor-pointer hover:text-yellow-500"
+          className="uppercase text-2xl text-center md:text-left my-12 font-medium tracking-wider text-yellow-better hidden md:block hover:cursor-pointer hover:text-amber-300 duration-150"
         >
           Show All &#8594;
         </Link>

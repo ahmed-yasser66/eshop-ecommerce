@@ -4,7 +4,7 @@ import SearchResult from "./SearchResult";
 const SearchBar = () => {
   const [word, setWord] = useState("");
   return (
-    <div className="nav--search mt-1.5 w-5/12 flex border-2 border-gray-700 rounded-md relative">
+    <div className="nav--search mt-1.5 w-5/12 flex border-2 border-gray-700 rounded-md">
       <input
         type="text"
         className="w-full h-full ps-4 outline-none p-1 text-xl font-medium bg-transparent"

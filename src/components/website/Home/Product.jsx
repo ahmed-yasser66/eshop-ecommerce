@@ -47,7 +47,7 @@ const Product = ({ image, title, price, rating: { rate }, id }) => {
                 key={index}
                 className={
                   index < Math.round(rate)
-                    ? "text-yellow-300"
+                    ? "text-amber-300"
                     : "text-white stroke-slate-500 stroke-1"
                 }
               >
@@ -59,7 +59,7 @@ const Product = ({ image, title, price, rating: { rate }, id }) => {
         <div className="flex justify-between px-6 pt-4">
           <span className="text-lg font-medium">${price}</span>
           <span
-            className="bg-yellow-300 w-10 h-10 text-center pe-[2px] rounded-full flex items-center justify-center cursor-pointer shadow-sm "
+            className="bg-yellow-300 w-14 h-14 text-center pe-[3px] rounded-full flex items-center justify-center cursor-pointer shadow-md hover:bg-amber-300 duration-200 hover:text-white"
             onClick={
               token
                 ? () => dispatch(addItemToCart({ image, title, price, id }))

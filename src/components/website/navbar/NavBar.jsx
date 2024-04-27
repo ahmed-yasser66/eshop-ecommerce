@@ -34,7 +34,7 @@ const NavBar = () => {
           {/* logo */}
           <NavLink to={"/"} className="logo">
             <h1 className="text-2xl md:text-3xl font-bold tracking-widest leading-relaxed pb-0.5">
-              EStore<span className="text-4xl text-yellow-400">.</span>
+              EStore<span className="text-4xl text-yellow-500">.</span>
             </h1>
           </NavLink>
           {/* search */}

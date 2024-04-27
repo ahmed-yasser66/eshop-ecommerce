@@ -24,7 +24,7 @@ const ProductDetails = () => {
         const data = await resp.json();
         setProduct(data);
       } catch (error) {
-        console.log(error);
+        throw new Error(error)
       }
     })();
   }, [id]);
@@ -51,7 +51,7 @@ const ProductDetails = () => {
         {Object.keys(product).length > 0 && (
           <>
             <ul className="flex gap-0 mb-4">
-              <li>
+              <li className="hover:text-amber-300 duration-100">
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
@@ -83,7 +83,7 @@ const ProductDetails = () => {
                   {formateTitle(product.title, 6)}
                 </h1>
                 <div className="p--rating flex items-center mt-1.5">
-                  <p className="flex items-center gap-1 p-1 text-yellow-400">
+                  <p className="flex items-center gap-1 p-1 text-yellow-500">
                     <span className="font-medium text-lg">
                       {product.rating.rate}
                     </span>

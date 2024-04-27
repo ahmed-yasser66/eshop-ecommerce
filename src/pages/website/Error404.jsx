@@ -16,7 +16,7 @@ const Error404 = () => {
       </h1>
       <Link
         to={"/"}
-        className="text-xl capitalize underline font-medium text-yellow-400 tracking-widest"
+        className="text-xl capitalize underline font-medium text-yellow-500 tracking-widest"
       >
         &#129044; Back to home
       </Link>

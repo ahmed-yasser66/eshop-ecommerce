@@ -5,6 +5,7 @@ import {
   Slider,
 } from "./HomeComponents";
 import { animationVar, motion } from "../../utils/vars";
+
 const HomePage = () => {
   return (
     <motion.div

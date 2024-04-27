@@ -37,14 +37,14 @@ const CartItem = ({ image, title, id, price, amount }) => {
         <div className="product--amount mt-14 pr-3">
           <ul className="flex flex-col items-center gap-3">
             <li
-              className="cursor-pointer hover:text-yellow-400"
+              className="cursor-pointer hover:text-yellow-500"
               onClick={() => dispatch(increase(id))}
             >
               <ChevronUp />
             </li>
             <li className="text-xl font-bold">{amount}</li>
             <li
-              className="cursor-pointer hover:text-yellow-400"
+              className="cursor-pointer hover:text-yellow-500"
               onClick={() => {
                 if (amount === 1) {
                   dispatch(remove(id));

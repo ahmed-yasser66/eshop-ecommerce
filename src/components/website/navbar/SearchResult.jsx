@@ -30,7 +30,7 @@ const SearchResult = ({ word = "mens" }) => {
     setMatchedData(matched);
   }, [word]);
   return (
-    <div className="srch-rslt-container bg-slate-100 absolute top-9 lg:left-0 lg:w-full min-h-10  w-72 -left-14">
+    <div className="srch-rslt-container bg-slate-100 absolute top-[80px] -translate-x-[50%] left-1/2 w-[90vw] lg:w-fit">
       <div className="srch-rslt overflow-y-scroll max-h-64">
         {/* handling searching  */}
         {matchedData.length == 0 && (
@@ -40,14 +40,14 @@ const SearchResult = ({ word = "mens" }) => {
         )}
         {/* searching results */}
         {matchedData.length > 0 &&
-          matchedData.map((item, index) => (
+          matchedData.map((item) => (
             <div
               className="srch-item text-center my-3 leading-3 pb-2 border-b-slate-500 border-b-2 font-medium"
               key={item.title}
             >
               <NavLink
                 to={`products/${item.id}`}
-                className="overflow-hidden text-ellipsis whitespace-nowrap block py-1"
+                className="overflow-hidden text-ellipsis whitespace-nowrap block py-1 text-xs md:text-base"
               >
                 {highlightMatch(item.title)}
               </NavLink>
