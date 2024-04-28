@@ -18,7 +18,7 @@ const Product = ({ image, title, price, rating: { rate }, id }) => {
     <div className="product-container w-10/12 sm:w-full shadow-md rounded-2xl border-2 border-slate-200 py-4 sm:basis-2/5 md:basis-2/5 xl:basis-1/5 lg:basis-[30%] group relative">
       <div className="group-hover:block hidden absolute top-1/2 left-1/2 [transform:translate(-50%,-50%)] bg-yellow-300 w-32 h-10 text-center leading-10 rounded-lg hover:bg-yellow-400 hover:text-white duration-150 shadow-md z-10">
         <button
-          className="font-medium tracking-wider font-[cursive]"
+          className="font-medium tracking-wider"
           onClick={() => ViewProductDetails()}
         >
           View Product

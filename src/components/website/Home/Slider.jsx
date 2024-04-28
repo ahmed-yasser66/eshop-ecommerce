@@ -53,7 +53,7 @@ const Slider = () => {
             height={"100vh"}
           />
           <div className="swiper--text absolute left-4 top-6 w-72 md:w-80 md:top-1/2 md:translate-y-[-50%] md:left-20 lg:left-36">
-            <h1 className="text-3xl font-medium text-white font-[cursive] md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
+            <h1 className="text-3xl font-medium text-white  md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
               FreeShipping
               <span className="block">on orders</span>
               <span>over $50</span>
@@ -73,7 +73,7 @@ const Slider = () => {
             className="object-cover w-full h-full object-[60%] md:object-center"
           />
           <div className="swiper--text absolute left-4 top-6 w-72 md:w-80 md:top-1/2 md:translate-y-[-50%] md:left-20 lg:left-36">
-            <h1 className="text-3xl font-medium text-white font-[cursive] md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
+            <h1 className="text-3xl font-medium text-white  md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
               Up to 60% Disount
               <span className="block">Electronics</span>
             </h1>
@@ -92,7 +92,7 @@ const Slider = () => {
             className="object-cover w-full h-full object-[60%] md:object-top"
           />
           <div className="swiper--text absolute left-4 top-6 w-72 md:w-80 md:top-1/2 md:translate-y-[-50%] md:left-20 lg:left-36">
-            <h1 className="text-3xl font-medium text-white font-[cursive] md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
+            <h1 className="text-3xl font-medium text-white  md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
               FreeShipping
               <span className="block">on new </span>
               <span>Jewerly</span>
