@@ -13,6 +13,7 @@ const HomePage = () => {
       initial="start"
       animate="show"
       exit="exit"
+      className="max-w-screen-2xl mx-auto"
     >
       <Slider />
       <CategoriesSection />

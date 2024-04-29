@@ -15,8 +15,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Slider = () => {
   return (
-    <main className="h-full md:h-96 md:section-min-height relative select-none">
+    <main className="h-full md:h-96 md:section-min-height relative select-none bg-slate">
       <Swiper
+        className="mySwiper w-full h-full max-w-screen-2xl"
         slidesPerView={1}
         spaceBetween={30}
         keyboard={{
@@ -27,7 +28,6 @@ const Slider = () => {
         }}
         navigation={{ enabled: true }}
         modules={[Keyboard, Pagination, Navigation, Autoplay]}
-        className="mySwiper w-full h-full"
         loop
         autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
         breakpoints={{
@@ -43,16 +43,16 @@ const Slider = () => {
           },
         }}
       >
-        <SwiperSlide className="relative w-screen h-screen">
+        <SwiperSlide className="relative w-full h-screen">
           <LazyLoadImage
             className="object-cover w-full h-full object-[60%] md:object-center"
             src={img}
             alt={img}
             effect="blur"
-            width={"100vw"}
+            width={"100%"}
             height={"100vh"}
           />
-          <div className="swiper--text absolute left-4 top-6 w-72 md:w-80 md:top-1/2 md:translate-y-[-50%] md:left-20 lg:left-36">
+          <div className="swiper--text absolute left-4 top-6 w-72 sm:w-80 sm:top-1/2 sm:translate-y-[-50%] sm:left-20 lg:left-36">
             <h1 className="text-3xl font-medium text-white  md:text-3xl sm:text-3xl md:tracking-widest md:leading-relaxed lg:leading-normal lg:text-5xl tracking-widest">
               FreeShipping
               <span className="block">on orders</span>
@@ -66,7 +66,7 @@ const Slider = () => {
         <SwiperSlide className="w-full h-full">
           <LazyLoadImage
             effect="blur"
-            width={"100vw"}
+            width={"100%"}
             height={"100vh"}
             src={img2}
             alt={img2}
@@ -85,7 +85,7 @@ const Slider = () => {
         <SwiperSlide className="w-full h-full">
           <LazyLoadImage
             effect="blur"
-            width={"100vw"}
+            width={"100%"}
             height={"100vh"}
             src={img3}
             alt={img3}

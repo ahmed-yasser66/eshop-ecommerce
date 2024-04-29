@@ -36,6 +36,7 @@ const Categories = () => {
         initial="start"
         animate="show"
         exit="exit"
+        className="max-w-screen-2xl mx-auto"
       >
         <div className="categories--container px-14 py-14">
           <p className="font-medium tracking-wider xl:ps-24">
@@ -80,6 +81,7 @@ const Categories = () => {
       initial="start"
       animate="show"
       exit="exit"
+      className="max-w-screen-2xl mx-auto"
     >
       <div className="categories--container px-14 py-14">
         <p className="font-medium tracking-wider xl:ps-24">

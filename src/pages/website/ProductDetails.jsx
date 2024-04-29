@@ -45,7 +45,7 @@ const ProductDetails = () => {
       initial="start"
       animate="show"
       exit="exit"
-      className="section-min-height mt-8 mx-auto"
+      className="section-min-height mt-8 mx-auto max-w-screen-2xl"
     >
       <div className="p--container px-6 lg:px-40">
         {Object.keys(product).length > 0 && (
