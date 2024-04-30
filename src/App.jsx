@@ -14,7 +14,6 @@ const ProductsAll = lazy(() => import("./pages/website/ProductsAll"));
 const ProductDetails = lazy(() => import("./pages/website/ProductDetails"));
 const Cart = lazy(() => import("./pages/website/Cart"));
 const HomePage = lazy(() => import("./pages/website/HomePage"));
-
 function App() {
   const location = useLocation();
   return (

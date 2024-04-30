@@ -69,7 +69,7 @@ const ProductDetails = () => {
             </ul>
             <div
               className='p--info grid [grid-template-areas:"b"_"a"_"c"]
-            md:[grid-template-areas:"a_b"_"a_c"] md:gap-x-12 justify-center items-center md:mt-6'
+            md:[grid-template-areas:"a_b"_"a_c"] md:gap-x-12 justify-center md:justify-start items-center md:mt-6'
             >
               <div className="p-img w-full h-80  [grid-area:a] border-2 md:w-96 border-slate-300 p-6 my-4">
                 <img
@@ -115,7 +115,7 @@ const ProductDetails = () => {
                 </button>
               </div>
             </div>
-            <div className="details--rating lg:px-32 lg:mt-12">
+            <div className="details--rating lg:mt-12">
               <div className="p--details mb-6 mt-4">
                 <h1 className='text-xl font-medium relative after:absolute after:h-0.5 after:w-full after:bg-slate-300 after:-bottom-1.5 after:left-0 after:content-[""]'>
                   Details
