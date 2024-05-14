@@ -27,7 +27,7 @@ const Footer = () => {
             Discover Your Unseen Passion
           </span>
           <hr className="mb-4 md:hidden" />
-          <div className="social-links flex gap-7 items-center justify-center mb-8 lg:mb-14 md:gap-6">
+          <div className="social-links flex gap-2 items-center justify-center mb-8 lg:mb-14 md:gap-6">
             <Link
               to={"https://www.instagram.com/"}
               className="hover:bg-slate-500 cursor-pointer p-1 rounded-xl"

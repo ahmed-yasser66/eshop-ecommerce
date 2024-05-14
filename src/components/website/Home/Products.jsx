@@ -8,7 +8,7 @@ const Products = () => {
   const { products, isLoading } = useSelector((state) => state.products);
   if (isLoading) {
     return (
-      <div className="px-16 mt-28">
+      <div className="mt-28">
         <h1 className="uppercase text-2xl text-center md:text-left my-12 underline underline-offset-8 font-medium tracking-wider">
           Products
         </h1>
@@ -29,7 +29,7 @@ const Products = () => {
   }
 
   return (
-    <div className="px-8 2xl:px-16 mt-28">
+    <div className="2xl:px-16 mt-28">
       <div className="md:flex justify-between">
         <h1 className="uppercase text-2xl text-center md:text-left my-12 underline underline-offset-8 font-medium tracking-wider">
           Products

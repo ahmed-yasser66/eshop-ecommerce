@@ -47,7 +47,7 @@ const Register = () => {
       <div className="section-min-height flex flex-col items-center justify-center">
         <form
           action="/login"
-          className="bg-slate-50 w-80 min-h-96 rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.150)] pb-10"
+          className="bg-slate-50 w-11/12 max-w-80 min-h-96 rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.150)] pb-10"
           onSubmit={(e) => handleSubmit(e)}
         >
           <h1 className='text-3xl font-bold text-center relative after:content-[""] after:absolute after:w-full after:h-0.5 after:bg-slate-300 after:bottom-0 after:left-0 mt-4 pb-4 leading-7'>

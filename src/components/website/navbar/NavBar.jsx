@@ -29,8 +29,8 @@ const NavBar = () => {
   }
   return (
     <>
-      <div className="bg-white w-full h-20 shadow-lg flex items-center sticky top-0 z-50">
-        <nav className="max-w-7xl w-[1280rem] flex items-center justify-center lg:gap-10 px-4 md:px-0 mx-auto gap-6">
+      <div className="bg-white w-full shadow-lg flex items-center sticky top-0 z-50">
+        <nav className="max-w-7xl w-[1280rem] flex items-center justify-between md:justify-center md:gap-10 px-4 md:px-0 mx-auto flex-wrap gap-y-4 pb-4 md:py-4 md:flex-nowrap">
           {/* logo */}
           <NavLink to={"/"} className="logo">
             <h1 className="text-2xl md:text-3xl font-bold tracking-widest leading-relaxed pb-0.5">
@@ -38,7 +38,9 @@ const NavBar = () => {
             </h1>
           </NavLink>
           {/* search */}
-          <SearchBar />
+          <div className="order-3 md:order-2 w-full md:w-5/12">
+            <SearchBar />
+          </div>
           {/* navlinks */}
           <NavLinks />
           {/* cart */}
@@ -77,7 +79,7 @@ const NavBar = () => {
           {token === undefined && (
             <>
               {/* Login btn */}
-              <Link to={"/login"} className="mt-1">
+              <Link to={"/login"} className="mt-1 order-2">
                 <button className="text-lg bg-yellow-300 w-24 font-medium rounded-md h-8  cursor-pointer hover:bg-yellow-400 hover:text-white">
                   <span>Login</span>
                 </button>
