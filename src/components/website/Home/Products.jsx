@@ -29,7 +29,7 @@ const Products = () => {
   }
 
   return (
-    <div className="2xl:px-16 mt-28">
+    <div className="md:px-16 mt-28">
       <div className="md:flex justify-between">
         <h1 className="uppercase text-2xl text-center md:text-left my-12 underline underline-offset-8 font-medium tracking-wider">
           Products
