@@ -81,7 +81,7 @@ const NavBar = () => {
           {token === undefined && (
             <>
               {/* Login btn */}
-              <Link to={"/login"} className="mt-1 order-4">
+              <Link to={"/login"} className="mt-1 md:order-4">
                 <button className="text-lg bg-yellow-300 w-24 font-medium rounded-md h-8  cursor-pointer hover:bg-yellow-400 hover:text-white">
                   <span>Login</span>
                 </button>
