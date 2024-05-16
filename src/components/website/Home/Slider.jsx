@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import { Keyboard, Pagination, Navigation, Autoplay } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useEffect, useRef } from "react";
 
 const slides = data.map((item) => (
   <SwiperSlide className="relative w-full h-screen" key={item.content}>
@@ -32,10 +33,24 @@ const slides = data.map((item) => (
     </div>
   </SwiperSlide>
 ));
-
 const Slider = () => {
+  // handle slider height depending on navbar height
+  const sectionRef = useRef();
+  useEffect(() => {
+    let navbarHeight = 0;
+    const navbar = document.getElementsByTagName("nav");
+    if (navbar) {
+      navbarHeight = navbar[0].getBoundingClientRect().height;
+      sectionRef.current.style.height =
+        window.innerHeight - navbarHeight + "px";
+    }
+  }, []);
+
   return (
-    <main className="[height:calc(100vh_-_80px)] relative select-none bg-slate">
+    <main
+      className="[height:calc(100vh_-_75.6px)] relative select-none bg-slate"
+      ref={sectionRef}
+    >
       <Swiper
         className="mySwiper w-full h-full max-w-screen-2xl"
         slidesPerView={1}

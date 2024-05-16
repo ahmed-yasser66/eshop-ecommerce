@@ -24,20 +24,16 @@ const Cart = () => {
         exit="exit"
         className="section-min-height mt-6 "
       >
-        <section className="min-h-[calc(43vh_-_64px)] bg-white">
+        <section className="min-h-screen bg-white">
           <header
-            className="flex gap-3 cursor-pointer px-12"
+            className="flex gap-3 cursor-pointer px-12 text-lg font-medium text-amber-500 lg:text-2xl py-8"
             onClick={() => window.history.back()}
           >
-            <span className="text-orange-500">
-              <LeftArrow />
-            </span>
-            <h1 className="text-3xl pt-3 text-orange-500 font-semibold">
-              Shopping Cart
-            </h1>
+            <LeftArrow />
+            Shopping Cart
           </header>
-          <p className="capitalize font-medium ps-20 text-base">
-            no items here
+          <p className="capitalize font-medium text-2xl mt-20 px-12">
+            No items to show...
           </p>
         </section>
       </motion.main>
@@ -51,33 +47,27 @@ const Cart = () => {
       exit="exit"
       className="cart--container"
     >
-      <main className="wideScreen:section-min-height wideScreen:section-min-height px-6 md:px-8 pt-6">
+      <main className="section-min-height px-4 pt-6">
         <header
-          className="flex gap-3 cursor-pointer"
+          className="flex gap-3 cursor-pointer text-amber-500 text-lg md:text-xl font-medium md:px-7 md:pt-7"
           onClick={() => window.history.back()}
         >
-          <span className="text-orange-500">
-            <LeftArrow />
-          </span>
-          <h1 className="text-3xl pt-3 text-orange-500 font-semibold">
-            Shopping Cart
-          </h1>
+          <LeftArrow />
+          Shopping Cart
         </header>
-        <p
-          className="font-semibold text-xl tracking-widest m-4 uppercase text-right  rounded-3xl cursor-pointer text-[red] hover:text-red-900 font-[math] w-fit float-right"
-          onClick={() => dispatch(clearCart())}
-        >
-          Clear Cart
-        </p>
-        <div className="clear-both"></div>
-        <section className="cart--products--checkout flex flex-col md:flex-row md:justify-center lg:gap-20 md:px-8 ">
-          <div className="cart-Products mt-10 lg:pr-6 flex flex-col gap-8 justify-center ">
+        <section className="cart--products--checkout flex flex-col md:flex-row md:justify-center lg:gap-20 md:px-8 lg:mt-16">
+          <div className="cart-Products mt-10 lg:pr-6 flex gap-8 justify-center items-center flex-wrap lg:flex-col">
             {cartItems.map((item, index) => {
               return <CartItem {...item} key={index} />;
             })}
-            {/* <div className='line h-0.5 w-44 bg-slate-300 mt-8 hidden md:block'></div> */}
+            <p
+              className="font-semibold md:text-xl tracking-widest m-4 mb-0 uppercase text-right cursor-pointer text-[red] hover:text-red-900 font-[math]"
+              onClick={() => dispatch(clearCart())}
+            >
+              Clear Cart
+            </p>
           </div>
-          <div className="checkout px-8 border-l-2 lg:border-l-slate-300 b border-l-transparent">
+          <div className="checkout border-l-2 lg:border-l-slate-300 b border-l-transparent">
             <div className="coupon my-6">
               <h1 className="uppercase font-medium text-lg mb-4">Coupon</h1>
               <div className="co-btn flex items-center border-2 border-slate-300 w-fit shadow-sm rounded-lg overflow-hidden">

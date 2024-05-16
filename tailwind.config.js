@@ -6,6 +6,7 @@ export default {
       screens: {
         wideScreen: { raw: "(min-apect-ratio:3/2)" },
         tallScreen: { raw: "(max-apect-ratio:3/2)" },
+        wideMobile: { raw: "(min-width:500px)" },
       },
       textColor: {
         "yellow-better": "rgb(204 134 1)",

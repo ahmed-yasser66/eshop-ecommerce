@@ -9,6 +9,7 @@ import LoadingProductDetails from "../../components/website/Home/LoadingProductD
 import Cookies from "universal-cookie";
 import { animationVar, motion } from "../../utils/vars";
 const ProductDetails = () => {
+  window.scrollTo(0, 0);
   const id = useParams().id;
   const nav = useNavigate();
   const [product, setProduct] = useState([]);
@@ -47,10 +48,10 @@ const ProductDetails = () => {
       exit="exit"
       className="section-min-height mt-8 mx-auto max-w-screen-2xl"
     >
-      <div className="p--container px-6 lg:px-40">
+      <div className="p--container px-5 xl:px-24">
         {Object.keys(product).length > 0 && (
           <>
-            <ul className="flex gap-0 mb-4">
+            <ul className="flex gap-0 mb-4 text-xs md:text-base font-medium">
               <li className="hover:text-amber-300 duration-100">
                 <Link to={"/"}>Home</Link>
               </li>
@@ -69,7 +70,7 @@ const ProductDetails = () => {
             </ul>
             <div
               className='p--info grid [grid-template-areas:"b"_"a"_"c"]
-            md:[grid-template-areas:"a_b"_"a_c"] md:gap-x-12 justify-center md:justify-start items-center md:mt-6'
+            md:[grid-template-areas:"a_b"_"a_c"] md:gap-x-12 justify-center sm:justify-start items-center md:mt-6'
             >
               <div className="p-img w-full h-80  [grid-area:a] border-2 md:w-96 border-slate-300 p-6 my-4">
                 <img
@@ -78,8 +79,8 @@ const ProductDetails = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="p--text [grid-area:b]  md:w-9/12 md:mt-6">
-                <h1 className="text-3xl font-medium">
+              <div className="p--text [grid-area:b] md:mt-6">
+                <h1 className="text-xl lg:text-3xl font-medium">
                   {formateTitle(product.title, 6)}
                 </h1>
                 <div className="p--rating flex items-center mt-1.5">
@@ -120,7 +121,7 @@ const ProductDetails = () => {
                 <h1 className='text-xl font-medium relative after:absolute after:h-0.5 after:w-full after:bg-slate-300 after:-bottom-1.5 after:left-0 after:content-[""]'>
                   Details
                 </h1>
-                <p className="py-6 [line-height:1.6] font-medium">
+                <p className="py-6 [line-height:1.6] font-medium text-start break-words">
                   {product.description}
                 </p>
               </div>

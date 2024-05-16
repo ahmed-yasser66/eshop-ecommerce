@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import "react-loading-skeleton/dist/skeleton.css";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./index.css";
-import { SharedLayout, ProtectedRoute } from "./RoutingElements";
+import { SharedLayout } from "./RoutingElements";
 import Loading from "./components/Loading";
 const Error404 = lazy(() => import("./pages/website/Error404"));
 const Register = lazy(() => import("./pages/website/Register"));
@@ -31,14 +31,7 @@ function App() {
             <Route path="/products/all" element={<ProductsAll />} />
             <Route path="products/:id" element={<ProductDetails />} />
             {/* protected routes */}
-            <Route
-              path="/cart"
-              element={
-                <ProtectedRoute>
-                  <Cart />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/cart" element={<Cart />} />
           </Route>
         </Routes>
       </Suspense>

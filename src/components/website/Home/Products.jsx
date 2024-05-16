@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import Product from "./Product";
 import Skeleton from "react-loading-skeleton";
 import { Link } from "react-router-dom";
-import { memo } from "react";
 
 const Products = () => {
   const { products, isLoading } = useSelector((state) => state.products);
@@ -29,25 +28,31 @@ const Products = () => {
   }
 
   return (
-    <div className="md:px-16 mt-28">
+    <div className="px-7 sm:px-16 lg:px-[90px] mt-16 max-w-screen-2xl mx-auto overflow-hidden">
       <div className="md:flex justify-between">
-        <h1 className="uppercase text-2xl text-center md:text-left my-12 underline underline-offset-8 font-medium tracking-wider">
+        <h1 className="uppercase text-xl text-center md:text-left my-12 underline underline-offset-8 font-medium tracking-wider">
           Products
         </h1>
         <Link
           to={"/products/all"}
-          className="uppercase text-2xl text-center md:text-left my-12 font-medium tracking-wider text-yellow-better hidden md:block hover:cursor-pointer hover:text-amber-300 duration-150"
+          className="uppercase text-xl text-center md:text-left my-12 font-medium tracking-wider text-yellow-better hidden md:block hover:cursor-pointer hover:text-amber-300 duration-150"
         >
           Show All &#8594;
         </Link>
       </div>
-      <div className="products flex flex-col items-center lg:justify-start xl:justify-center gap-8  justify-center mb-8 sm:flex-row sm:flex-wrap">
-        {products &&
-          products.slice(0, 8).map((item, i) => {
-            return <Product {...item} key={i} />;
-          })}
+      <div className="products flex flex-wrap items-center [margin:-20px_-20px_0_0] md:[margin:-3%_-3%_0_0]">
+        {products.slice(0, 8).map((item, i) => {
+          return (
+            <div
+              key={i}
+              className="w-full [padding:20px_20px_0_0] md:[padding:3%_3%_0_0] wideMobile:w-1/2 xl:!w-1/4 lg:!w-1/3"
+            >
+              <Product {...item} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
-export default memo(Products);
+export default Products;

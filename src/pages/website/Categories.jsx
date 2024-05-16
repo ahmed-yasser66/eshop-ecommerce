@@ -59,16 +59,22 @@ const Categories = () => {
       initial="start"
       animate="show"
       exit="exit"
-      className="max-w-screen-2xl mx-auto"
+      className="max-w-screen-2xl mx-auto min-h-screen"
     >
-      <div className="categories--container px-14 py-14">
-        <p className="font-medium tracking-wider xl:ps-40">
+      <div className="categories--container px-7 sm:px-16 lg:px-[90px] py-14 overflow-hidden">
+        <p className="font-medium tracking-wider mb-16">
           <Link to={"/"}>Home </Link>
           <BreadCrumb title={param} path={`/categories/${param}`} />
         </p>
-        <div className="products flex flex-col items-center lg:justify-start xl:justify-start gap-8 justify-center mb-8 sm:flex-row sm:flex-wrap mt-16 xl:ps-40">
+
+        <div className="products flex mt-16 flex-wrap items-center [margin:-20px_-20px_0_0] lg:[margin:-30px_-30px_0_0] xl:[margin:-3%_-3%_0_0]">
           {relatedProducts.map((item, i) => (
-            <Product {...item} key={i} />
+            <div
+              key={i}
+              className="[padding:20px_20px_0_0] lg:[padding:30px_30px_0_0] xl:[padding:3%_3%_0_0] w-full wideMobile:w-1/2 lg:!w-1/3 xl:!w-1/4"
+            >
+              <Product {...item} />
+            </div>
           ))}
         </div>
       </div>

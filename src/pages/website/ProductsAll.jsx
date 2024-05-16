@@ -15,7 +15,7 @@ const Categories = () => {
   const [showed, setShowed] = useState("all");
   const [productsList, setProductsList] = useState([]);
   const allProducts = useSelector((state) => state.products.products);
-  function showProducts(title) {
+  function showProductsOfCategory(title) {
     setProductsList(allProducts.filter((item) => item.category === title));
     setShowed(title);
   }
@@ -28,7 +28,7 @@ const Categories = () => {
     "women's clothing",
   ];
   const ActiveCategory =
-    "bg-yellow-500 text-lg font-medium px-5 py-2 rounded-lg cursor-pointer";
+    "bg-yellow-500 text-xs md:text-lg font-medium px-5 py-2 rounded-lg cursor-pointer";
   if (allProducts.length < 1) {
     return (
       <motion.div
@@ -83,30 +83,46 @@ const Categories = () => {
       exit="exit"
       className="max-w-screen-2xl mx-auto"
     >
-      <div className="categories--container px-14 py-14">
-        <p className="font-medium tracking-wider xl:ps-24">
+      <div className="categories--container px-7 sm:px-16 lg:px-[90px] py-14 overflow-hidden">
+        <p className="font-medium tracking-wider">
           <Link to={"/"}>Home </Link>
           <BreadCrumb title={"products"} path={`/products/all`} />
         </p>
-        <ul className="flex gap-4 flex-wrap mt-8 xl:ps-24">
+
+        <ul className="flex gap-2 md:gap-4 flex-wrap mt-8 mb-16">
           {categories.map((item, i) => (
             <li
-              onClick={() => showProducts(item)}
+              onClick={() => showProductsOfCategory(item)}
               key={i}
               className={
                 showed === item
                   ? ActiveCategory
-                  : "bg-yellow-400 text-lg font-medium px-5 py-2 rounded-lg cursor-pointer"
+                  : "bg-yellow-400 text-xs md:text-lg font-medium px-5 py-2 rounded-lg cursor-pointer"
               }
             >
               {item}
             </li>
           ))}
         </ul>
-        <div className="products flex flex-col items-center lg:justify-center  gap-8 justify-center mb-8 sm:flex-row sm:flex-wrap mt-16">
+
+        <div className="products flex flex-wrap items-center [margin:-20px_-20px_0_0] lg:[margin:-40px_-40px_0_0] xl:[margin:-3%_-3%_0_0]">
           {showed == "all"
-            ? allProducts.map((item, i) => <Product {...item} key={i} />)
-            : productsList.map((item, i) => <Product {...item} key={i} />)}
+            ? allProducts.map((item, i) => (
+                <div
+                  key={i}
+                  className="[padding:20px_20px_0_0] lg:[padding:40px_40px_0_0] xl:[padding:3%_3%_0_0] w-full wideMobile:w-1/2 lg:!w-1/3 xl:!w-1/4"
+                >
+                  <Product {...item} />
+                </div>
+              ))
+            : productsList.map((item, i) => (
+                <div
+                  key={i}
+                  className="[padding:20px_20px_0_0] lg:[padding:40px_40px_0_0] xl:[padding:3%_3%_0_0] w-full sm:w-1/2 lg:w-1/3 xl:w-1/4"
+                >
+                  <Product {...item} />
+                </div>
+              ))}
         </div>
       </div>
     </motion.div>

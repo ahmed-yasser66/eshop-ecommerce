@@ -15,32 +15,23 @@ const Product = ({ image, title, price, rating: { rate }, id }) => {
   }
   const dispatch = useDispatch();
   return (
-    <div className="product-container w-10/12 sm:w-full shadow-md rounded-2xl border-2 border-slate-200 py-4 sm:basis-2/5 md:basis-2/5 xl:basis-1/5 lg:basis-[30%] group relative max-w-72">
-      <div className="group-hover:block hidden absolute top-1/2 left-1/2 [transform:translate(-50%,-50%)] bg-yellow-300 w-32 h-10 text-center leading-10 rounded-lg hover:bg-yellow-400 hover:text-white duration-150 shadow-md z-10">
-        <button
-          className="font-medium tracking-wider"
-          onClick={() => ViewProductDetails()}
-        >
-          View Product
-        </button>
-      </div>
+    <div className="product-container shadow-md rounded-2xl border-2 border-slate-200 group relative p-6">
       <div className="product text-center max-h-[371.2px] relative z-[1]">
-        <div className="img-container w-[160px] h-[200px] mb-6 mx-auto">
-          <LazyLoadImage
-            width={160}
-            height={200}
-            effect="blur"
-            src={image}
-            alt={title}
-            className="w-full h-full object-contain cursor-pointer"
-            onClick={() => ViewProductDetails()}
-          />
-        </div>
-        <h1 className="overflow-hidden max-h-[24px]">
-          {title.slice(0, 20)}...
+        <h1 className="overflow-hidden max-h-[24px] font-medium text-start mb-4">
+          {title.split(" ").slice(0, 3).join(" ")}
         </h1>
+        <LazyLoadImage
+          width={120}
+          height={120}
+          effect="blur"
+          src={image}
+          alt={title}
+          className="size-full object-contain cursor-pointer"
+          onClick={() => ViewProductDetails()}
+        />
+
         {/* stars */}
-        <span className="flex justify-center items-center mt-2">
+        <span className="flex justify-center items-center">
           {Array.from({ length: 5 }).map((_, index) => {
             return (
               <div
@@ -56,10 +47,11 @@ const Product = ({ image, title, price, rating: { rate }, id }) => {
             );
           })}
         </span>
-        <div className="flex justify-between px-6 pt-4">
-          <span className="text-lg font-medium">${price}</span>
+
+        <div className="flex justify-between items-center mt-4">
+          <span className="text-lg font-medium text-neutral-600">${price}</span>
           <span
-            className="bg-yellow-300 w-14 h-14 text-center pe-[3px] rounded-full flex items-center justify-center cursor-pointer shadow-md hover:bg-amber-300 duration-200 hover:text-white"
+            className="bg-yellow-300 size-11 text-center pe-[3px] rounded-full flex items-center justify-center cursor-pointer shadow-md hover:bg-amber-300 duration-200 hover:text-white"
             onClick={
               token
                 ? () => dispatch(addItemToCart({ image, title, price, id }))

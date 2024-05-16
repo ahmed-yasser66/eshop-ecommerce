@@ -41,45 +41,47 @@ const NavBar = () => {
           <div className="order-3 md:order-2 w-full md:w-5/12">
             <SearchBar />
           </div>
-          {/* navlinks */}
-          <NavLinks />
-          {/* cart */}
-          {token && token !== undefined && (
-            <>
-              {/* cart */}
-              <div
-                className="md:mx-4 flex items-center gap-2
-          relative pt-1.5"
-              >
-                <NavLink to={"/cart"} className="cart cursor-pointer relative">
-                  <CartIcon />
-                  <span className="absolute -top-2 -right-2 bg-yellow-400 w-6 h-6 text-center rounded-full leading-6 font-bold">
-                    {amount}
+          {/* navlinks-cart */}
+          <div className="flex md:order-3">
+            <NavLinks />
+            {/* cart icon */}
+            {token && token !== undefined && (
+              <>
+                {/* cart */}
+                <div className="md:mx-4 flex items-center gap-2 relative pt-1.5">
+                  <NavLink
+                    to={"/cart"}
+                    className="cart cursor-pointer relative"
+                  >
+                    <CartIcon />
+                    <span className="absolute -top-2 -right-2 bg-yellow-400 w-6 h-6 text-center rounded-full leading-6 font-bold">
+                      {amount}
+                    </span>
+                  </NavLink>
+                  <div></div>
+                  <span
+                    className="cursor-pointer pb-0.5 lg:hidden"
+                    onClick={() => setIsOpen(!isOpen)}
+                  >
+                    <AccountIcon />
                   </span>
-                </NavLink>
-                <div></div>
-                <span
-                  className="cursor-pointer pb-0.5 lg:hidden"
-                  onClick={() => setIsOpen(!isOpen)}
-                >
-                  <AccountIcon />
-                </span>
-                <span
-                  className="cursor-pointer pb-0.5 hidden lg:block ml-5"
-                  onClick={() => logout()}
-                >
-                  <button className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 font-medium outline-none">
-                    Logout
-                  </button>
-                </span>
-              </div>
-            </>
-          )}
+                  <span
+                    className="cursor-pointer pb-0.5 hidden lg:block ml-5"
+                    onClick={() => logout()}
+                  >
+                    <button className="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 font-medium outline-none">
+                      Logout
+                    </button>
+                  </span>
+                </div>
+              </>
+            )}
+          </div>
           {/* login-btn */}
           {token === undefined && (
             <>
               {/* Login btn */}
-              <Link to={"/login"} className="mt-1 order-2">
+              <Link to={"/login"} className="mt-1 order-4">
                 <button className="text-lg bg-yellow-300 w-24 font-medium rounded-md h-8  cursor-pointer hover:bg-yellow-400 hover:text-white">
                   <span>Login</span>
                 </button>

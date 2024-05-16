@@ -55,55 +55,57 @@ const Login = () => {
           close={setErr}
         />
       )}
-      <div className="section-min-height flex flex-col items-center justify-center">
-        <form
-          action="/login"
-          className="bg-slate-50 max-w-80 w-11/12 h-96 rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.150)] mt-12"
-          onSubmit={(e) => handleSubmit(e)}
-        >
-          <h1 className='text-3xl font-bold text-center relative after:content-[""] after:absolute after:w-full after:h-0.5 after:bg-slate-300 after:bottom-0 after:left-0 mt-4 pb-4 leading-7'>
+      <form
+        onSubmit={handleSubmit}
+        className=" flex md:items-center md:gap-x-20 justify-center max-w-screen-xl mx-auto min-h-[calc(100vh_-_75px)] px-5"
+      >
+        <img
+          src="/src/assets/login.svg"
+          alt="login"
+          width={350}
+          height={350}
+          className="size-[350px] hidden md:block xl:size-[600px]"
+        />
+        <div className="inputs w-full md:w-1/2 flex flex-col h-fit md:justify-center max-w-[350px] mt-16 sm:pt-0 border-4 p-4 rounded-lg md:border-0">
+          <h1 className="text-4xl md:hidden font-semibold my-7 text-center underline">
             Login
           </h1>
-          <div className="user--container text-xl mt-8 text-center px-8">
-            <input
-              type="text"
-              className="outline-none border-b-slate-300 border-transparent border-b-2 w-full h-12 bg-transparent "
-              placeholder="username"
-              name="username"
-            />
-            <span className="block text-start text-base text-gray-600">
-              username: mor_2314
-            </span>
-          </div>
-          <div className="pass--container text-xl  mt-8 text-center px-8">
-            <input
-              type="password"
-              className="outline-none bg-transparent border-b-slate-300 border-transparent border-b-2 w-full"
-              placeholder="password"
-              name="password"
-            />
-            <span className="block text-base text-start text-gray-600">
-              password: 83r5^_
-            </span>
-          </div>
-          <div className="flex justify-center">
-            <button
-              className="bg-yellow-300 w-3/4 h-10 text-xl font-bold rounded-md mt-10 shadow-md hover:bg-yellow-400 hover:text-white transition-colors duration-200"
-              type="submit"
-            >
-              {pending ? "please wait.." : "Login"}
-            </button>
-          </div>
-          <div className="flex justify-center mt-2 text-sm">
-            <Link
-              to={"/register"}
-              className="text-sky-600 capitalize hover:underline tracking-wide"
-            >
-              create new account ?
+          <label htmlFor="username" className="text-neutral-600">
+            Username
+          </label>
+          <input
+            type="text"
+            placeholder="username"
+            id="username"
+            defaultValue={"mor_2314"}
+            className="h-10 outline-none border-2 border-gray-400 rounded-md ps-3"
+            name="username"
+          />
+          <label htmlFor="password" className="text-neutral-600 mt-7">
+            Password
+          </label>
+          <input
+            type="password"
+            placeholder="username"
+            id="password"
+            defaultValue={"83r5^_"}
+            className="h-10 outline-none border-2 border-gray-400 rounded-md ps-3 mb-7"
+            name="password"
+          />
+          <button
+            className="h-10 w-full rounded-md bg-yellow-300 font-medium gradient shadow-lg hover:bg-yellow-400 hover:text-white cursor-pointer"
+            disabled={pending}
+          >
+            {pending ? "please wait..." : "Login"}
+          </button>
+          <p className="text-center my-5">
+            Don't have an account?{" "}
+            <Link to={"/register"} className="hover:underline">
+              Sign Up
             </Link>
-          </div>
-        </form>
-      </div>
+          </p>
+        </div>
+      </form>
     </motion.div>
   );
 };
