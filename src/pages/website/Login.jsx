@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import Alert from "../../components/website/Alert";
 import { animationVar, motion } from "../../utils/vars";
+import img from "/src/assets/login.svg";
 const Login = () => {
   const cookies = new Cookies();
   const { token, setToken } = useTokenContext();
@@ -60,7 +61,7 @@ const Login = () => {
         className=" flex md:items-center md:gap-x-20 justify-center max-w-screen-xl mx-auto min-h-[calc(100vh_-_75px)] px-5"
       >
         <img
-          src="/src/assets/login.svg"
+          src={img}
           alt="login"
           width={350}
           height={350}

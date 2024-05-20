@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import { animationVar, motion } from "../../utils/vars";
+import img from "/src/assets/register.svg";
 const Register = () => {
   const token = new Cookies().get("e-lgn-token");
   const nav = useNavigate();
@@ -46,7 +47,7 @@ const Register = () => {
       )}
       <form className=" flex md:items-center md:gap-x-20 justify-center max-w-screen-xl mx-auto min-h-[calc(100vh_-_75px)] px-2">
         <img
-          src="/src/assets/register.svg"
+          src={img}
           alt="register"
           width={350}
           height={350}
