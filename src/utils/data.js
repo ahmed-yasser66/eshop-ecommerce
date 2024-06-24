@@ -1,17 +1,6 @@
-import img from "../assets/landing.avif";
-import img2 from "../assets/landing2.avif";
-
-export default [
-  {
-    img: img,
-    alt: img,
-    content: "Free shipping on all orders over $50! Shop worry-free.",
-    path: "/products/all",
-  },
-  {
-    img: img2,
-    alt: img2,
-    content: "Flash sale! Don't miss out on these amazing deals (ends soon).",
-    path: "/categories/electronics",
-  },
-];
+export const defaultMetaTags = {
+  title: "EStore | Shop for Electronics and further",
+  description:
+    "Find a wide selection of Electronics at EStore. High-quality products, fast shipping, and secure checkout. Shop now!",
+  img: "/og.webp",
+};

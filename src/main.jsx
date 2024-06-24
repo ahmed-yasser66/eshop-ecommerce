@@ -1,19 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import { BrowserRouter } from "react-router-dom";
+
 import { Provider } from "react-redux";
+
+import LoginContext from "./context/TokenContext.jsx";
 import store from "./store";
-import LoginContext from "./utils/TokenContext.jsx";
+import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <LoginContext>
-          <App />
-        </LoginContext>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <LoginContext>
+      <App />
+    </LoginContext>
+  </Provider>,
 );

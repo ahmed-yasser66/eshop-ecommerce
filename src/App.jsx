@@ -1,41 +1,70 @@
-import { Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import { AnimatePresence } from "framer-motion";
-import "react-loading-skeleton/dist/skeleton.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import { Loader as detailsLoader } from "./pages/ProductDetails";
+
+const SharedLayout = lazy(() => import("./components/SharedLayout"));
+const Error404 = lazy(() => import("./pages/Error404"));
+const Register = lazy(() => import("./pages/Register"));
+const Login = lazy(() => import("./pages/Login"));
+const Categories = lazy(() => import("./pages/Categories"));
+const ProductsAll = lazy(() => import("./pages/ProductsAll"));
+const ProductDetails = lazy(() => import("./pages/ProductDetails"));
+const Cart = lazy(() => import("./pages/Cart"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const Loading = lazy(() => import("./components/Loading"));
+
 import "react-lazy-load-image-component/src/effects/blur.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/900.css";
 import "./index.css";
-import { SharedLayout } from "./RoutingElements";
-import Loading from "./components/Loading";
-const Error404 = lazy(() => import("./pages/website/Error404"));
-const Register = lazy(() => import("./pages/website/Register"));
-const Login = lazy(() => import("./pages/website/Login"));
-const Categories = lazy(() => import("./pages/website/Categories"));
-const ProductsAll = lazy(() => import("./pages/website/ProductsAll"));
-const ProductDetails = lazy(() => import("./pages/website/ProductDetails"));
-const Cart = lazy(() => import("./pages/website/Cart"));
-const HomePage = lazy(() => import("./pages/website/HomePage"));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <SharedLayout />,
+    errorElement: <Error404 />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "/categories/:id",
+        element: <Categories />,
+      },
+      {
+        path: "/products/bycategory",
+        element: <ProductsAll />,
+      },
+      {
+        path: "products/:id",
+        element: <ProductDetails />,
+        loader: detailsLoader,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ],
+  },
+]);
 function App() {
-  const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
-      <Suspense fallback={<Loading />}>
-        <Routes location={location} key={location.pathname}>
-          {/* Error 404 page */}
-          <Route path="*" element={<Error404 />} />
-          {/* website pages */}
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/categories/:id" element={<Categories />} />
-            <Route path="/products/all" element={<ProductsAll />} />
-            <Route path="products/:id" element={<ProductDetails />} />
-            {/* protected routes */}
-            <Route path="/cart" element={<Cart />} />
-          </Route>
-        </Routes>
-      </Suspense>
-    </AnimatePresence>
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router} />
+    </Suspense>
   );
 }
 
