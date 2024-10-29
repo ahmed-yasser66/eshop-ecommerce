@@ -6,7 +6,7 @@ self.addEventListener("install", (ev) => {
   ev.waitUntil(
     caches.open(cacheName).then((cache) => {
       return cache.addAll(cacheList).then(() => self.skipWaiting());
-    }),
+    })
   );
 });
 self.addEventListener("fetch", (ev) => {
@@ -29,7 +29,7 @@ function networkRevalidateAndCache(ev) {
       } else {
         return caches.match(ev.request);
       }
-    },
+    }
   );
 }
 function cacheOnly(ev) {

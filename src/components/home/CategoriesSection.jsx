@@ -45,11 +45,11 @@ const CategoriesSection = () => {
   return (
     <section className="section-default" id="categories">
       <h1 className="h1-primary">CATEGORIES</h1>
-      <div className="wrapper h-[500px] flex justify-center gap-x-1 md:gap-x-4 rounded-md">
+      <div className="wrapper h-[500px] flex justify-center items-center gap-x-1 md:gap-x-4 rounded-md">
         {data.map((cat) => (
           <div
             key={cat.title}
-            className={`relative after:size-full after:absolute after:top-0 after:left-0 after:bg-gradient-to-t after:from-black/45 after:from-30% after:to-transparent aspect-[3/2] ${isActive == cat.title ? "flex-[1_1_90px]" : "md:flex-[0_1_90px] flex-[0_1_20px] cursor-pointer saturate-0 hover:saturate-150"}`}
+            className={`relative after:size-full after:absolute after:top-0 after:left-0 after:bg-gradient-to-t after:from-black/45 after:from-30% after:to-transparent h-[100%] ${isActive == cat.title ? "flex-[1_1_250px]" : "md:flex-[0_1_90px] flex-[0_1_20px] cursor-pointer saturate-0 hover:saturate-150"}`}
             onClick={() => setActive(cat.title)}
           >
             <picture>
@@ -81,4 +81,5 @@ const CategoriesSection = () => {
     </section>
   );
 };
-export default memo(CategoriesSection);
+
+export default CategoriesSection;
